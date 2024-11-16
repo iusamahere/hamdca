@@ -1,0 +1,21 @@
+.featured-products {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

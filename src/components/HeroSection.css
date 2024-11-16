@@ -1,0 +1,25 @@
+.hero-section {
+    background-image: url('https://via.placeholder.com/1920x1080');
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: white;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #ff7f50;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+  }
+  

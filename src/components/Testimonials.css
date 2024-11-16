@@ -1,0 +1,17 @@
+.testimonials {
+    padding: 50px;
+    background-color: #eeeeee;
+    text-align: center;
+  }
+  
+  .review-card {
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .reviews {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  

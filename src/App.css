@@ -1,38 +1,430 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+ 
+}
+
+
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero {
+  background-color: #d73d3d;
+  color: #fff;
+  padding: 50px 20px;
+  background-image: url('./images/1.jpg'); /* Use relative path */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+/* Base style for all section titles */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin: 20px 0;
+ 
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Specific style for "My Portfolio" */
+.portfolio-title {
+  font-size: 3rem;
+  color: #9a5a00; /* Elegant blue */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.portfolio-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #9a5a00;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Specific style for "Weddings" */
+.weddings-title {
+  font-size: 3.5rem; /* Slightly larger size */
+  color: #6b4e71; /* Romantic purple */
+  text-transform: capitalize; /* First letter capitalized */
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.weddings-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #e8c1c1; /* Romantic pink */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+.hero-title {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin: 10px 0 0;
+}
+
+.gallery {
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.7s ease;
+  aspect-ratio: 3/4.4;
+}
+
+.gallery-grid img {
+  transition: transform 0.3s ease, box-shadow 0.7s ease, max-width 2.3s ease, max-height 2.3s ease;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.gallery-grid img:active {
+  transform: scale(2.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  display: flex;
+  top: 0;
+  left: 0;
+}
+
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
   color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.7s;
 }
 
-.App-link {
-  color: #61dafb;
+.close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+/* Packages Section */
+.packages {
+  background-color: #f2f2f2;
+  padding: 50px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.package-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.package-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: #fffefd;
+}
+
+.package-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  
+}
+
+.package-description {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.package-price {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Package Modal Styling */
+.package-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.package-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.package-modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.package-modal-content h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.package-modal-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.package-modal-content .modal-package-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.close-package-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.7s;
+}
+
+.close-package-modal:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* General Section Styling */
+.about, .contact {
+  padding: 60px 30px;
+  text-align: center;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s ease forwards;
+  max-width: 800px; /* Center on larger screens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+/* Add a subtle hover effect */
+.about:hover, .contact:hover {
+  transform: scale(1.03) translateY(0); /* Slight scaling */
+  padding: 60px 80px; /* Expanded padding */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Add an elegant separator line */
+.about::before, .contact::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #ff7f50; /* Vibrant coral */
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+/* Smooth animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about, .contact {
+    padding: 40px 20px;
+    margin: 30px auto;
+  }
+}
+
+
+/* Section Title Styling */
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.about-text {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+/* Instagram and WhatsApp Button Styling */
+.contact-button, .social-button {
+  font-size: 16px;
+  padding: 12px 30px;
+  margin: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover, .social-button:hover {
+  background-color: #ff3366;
+  transform: scale(1.1);
+}
+
+.contact-button:active, .social-button:active {
+  transform: scale(0.95);
+}
+
+/* Icons for Instagram and WhatsApp Buttons */
+.social-button i {
+  margin-right: 8px;
+}
+
+/* Animation for Sections */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about, .contact {
+    padding: 30px 15px;
+  }
+  
+  .contact-button, .social-button {
+    width: 100%;
+    padding: 15px 0;
   }
 }
